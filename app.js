@@ -1,6 +1,7 @@
 //Imports
 import express from "express";
 import Database from "better-sqlite3";
+const port = process.env.PORT || 4000;
 
 //import routers
 import artistsRouter from './routes/artists.js'
@@ -50,8 +51,8 @@ app.get('/api/mediatypes', (req, res) => {
 
 
 //Listen for REQs on port 3000
-app.listen(3000, () => {
-    console.log('Listen on port 3000');
+app.listen(port, () => {
+    console.log(`Listen on port ${port}`);
 })
 
 
