@@ -1,77 +1,81 @@
-<img width="200px" src="https://w0244079.github.io/nscc/nscc-jpeg.jpg">
+# Chinook App Backend Enhancement
 
-# INET 5010 - Chinook App Backend Assignment 3
+## Overview
 
-**Final of Three Cumulative Assignments**
+The **Chinook App Backend** project demonstrates my ability to enhance and extend backend functionality to integrate seamlessly with a pre-existing frontend and database. This project involved developing robust RESTful APIs, managing database schema updates, implementing data validation, and ensuring a seamless user experience through efficient backend support.
 
-Welcome to the Chinook App Backend Assignment 3! This marks the concluding phase of our cumulative assignments, where you'll play a pivotal role in enhancing the backend logic of the Chinook App. Your task is to ensure seamless integration with the final set of frontend/client files provided, along with accommodating the latest changes made to the Chinook database.
+---
 
-## Assignment Background
+## Key Features
 
-The UI/Frontend team has diligently worked on the final set of pages, covering the complete lifecycle of Artists, Albums, and Tracks. The database team has introduced new elements, including a `ReleaseYear` column in the `albums` table and a new table called `themes`. Your mission is to adapt the backend to these changes and provide the necessary functionality to support the comprehensive set of frontend features.
+### 1. Comprehensive API Development
+- Created and optimized RESTful APIs using **Express.js** to support the full lifecycle of:
+  - **Artists**: Add, update, delete, and search for artists.
+  - **Albums**: Add, update, and delete albums, with automatic cascading changes to related tracks.
+  - **Tracks**: Add, update, and delete individual tracks.
+- Integrated case-insensitive search functionality for artists, ensuring enhanced user experience.
 
-## New Requirements
+### 2. Database Integration and Schema Updates
+- Worked with an updated database schema, including:
+  - A new `ReleaseYear` column in the `albums` table.
+  - A `themes` table to support dynamic frontend styling options.
+- Leveraged SQL queries with advanced techniques like `LIKE` for search operations.
 
-1. **Support Artist Operations:**
-   - Create Express.js endpoints to handle the creation, updating, and deletion of artists. Use the frontend files as a guide for endpoint requirements.
-   - Ensure the backend seamlessly integrates with the corresponding frontend pages.
-   - Implement and use robust validation schemas using a known validation library to ensure data integrity.
-   - Use the respective frontend pages and the in-class code examples as a guide to inform your implementation of each needed endpoint.
-   - Note: The database team has implemented a `CASCADE DELETE` for artists meaning that when an artist is deleted, all related albums and tracks are also deleted automatically.
+### 3. Robust Data Validation
+- Implemented validation schemas using **Joi** to ensure data integrity for all API endpoints.
+- Validated incoming requests for CRUD operations to prevent malformed or invalid data from affecting the database.
 
-2. **Support Album Operations:**
-   - Create Express.js endpoints to handle the creation, updating, and deletion of albums. Use the frontend files as a guide for endpoint requirements.
-   - Ensure the backend seamlessly integrates with the corresponding frontend pages.
-   - Implement and use robust validation schemas using a known validation library to ensure data integrity.
-   - Use the respective frontend pages and the in-class code examples as a guide to inform your implementation of each needed endpoint.
-   - Note: The database team has implemented a `CASCADE DELETE` for albums meaning that when an album is deleted, all related tracks are also deleted automatically.
+### 4. Enhanced Modularity
+- Refactored server architecture:
+  - Moved endpoint logic to modular **Express Routers** for improved readability and maintainability.
+  - Transformed `app.js` into a configuration hub for middleware and server setup.
 
-3. **Support Track Operations:**
-   - Create Express.js endpoints to handle the creation, updating, and deletion of albums. Use the frontend files as a guide for endpoint requirements.
-   - Ensure the backend seamlessly integrates with the corresponding frontend pages.
-   - Implement and use robust validation schemas using a known validation library to ensure data integrity.
-   - Use the respective frontend pages and the in-class code examples as a guide to inform your implementation of each needed endpoint.
-  
-4. **Support Artist Search:**
-   - The frontend team has added a search box that users can type in which triggers a search for the artists that match the search term.
-   - Create an endpoint in Express.js which handles the submission of the search term and performs a query which returns all records that match the search term.
-     - Research the `LIKE` SQL keyword to help build out your query against the database.
-   - Ensure that the query is case-insensitive.
-   - Use the respective frontend pages and the in-class code examples as a guide to inform your implementation of each needed endpoint.
+### 5. Frontend Integration
+- Adapted backend logic to align with a pre-existing frontend:
+  - Ensured all API endpoints were compatible with the final frontend implementation.
+  - Supported dynamic theme selection by integrating with the `themes` table.
 
-5. **Accommodate Database Changes:**
-   - The frontend pages have implemented the concept of themes which allows the end-user to select from a list of styling themes. These themes are defined in a new `themes` table in the provided database.
-   - Implement necessary server code to interact with the new `themes` table in the database.
-   - Correct implementation of the necessary endpoint will enable theme selection in the frontend pages.
+### 6. Thorough Testing
+- Used **Postman** and browser developer tools to rigorously test API endpoints.
+- Verified seamless functionality of backend services with frontend features.
 
-6. **Endpoint Refactoring:**
-   - Refactor your server code by removing endpoints from `app.js`. 
-   - Re-implement these endpoints using respective Express Routers. Refer to in-class examples and class discussion for guidance.
-   - Once completed, `app.js` should resemble more of a configuration file rather than a file containing endpoints. All endpoint code and libraries/packages supporting these endpoints should be relocated in an appropriate route file.
+---
 
-7. **Testing and Validation:**
-   - Utilize tools like Postman and browser developer tools to thoroughly test each endpoint's functionality.
-   - Confirm that the backend seamlessly supports the complete set of frontend features.
-   - Ensure robust validation using a known validation library for all CRUD operations.
+## Technologies Used
 
-## Important Considerations
+- **Node.js**: Backend runtime environment.
+- **Express.js**: Framework for creating RESTful APIs.
+- **Sqlite**: Relational database management.
+- **Joi**: Data validation library.
+- **Postman**: API testing tool.
+- **Git**: Version control.
 
-1. **Code Migration:**
-   - Begin this assignment by copying your existing `server` code from Assignment 2 as a starting point.
-   - Refrain from copying the database or static frontend files, as new versions are provided in the latest repository.
+---
 
-2. **Database Alterations:**
-   - Acknowledge the new `ReleaseYear` column in the `albums` table and the introduction of the `themes` table.
+## Challenges Overcome
 
-3. **Important Note: Do Not Modify Frontend Files**
-   - The provided frontend files are considered final and complete. Do not alter or modify these files. Focus solely on the backend server-side implementation.
+- **Database Schema Changes**: Incorporated new fields and tables while ensuring backward compatibility with existing data.
+- **Search Optimization**: Developed an efficient and user-friendly case-insensitive search mechanism for artists.
+- **Modular Refactoring**: Transformed monolithic server code into a scalable and maintainable architecture.
 
-## Need Help?
+---
 
-If you encounter difficulties or have questions, don't hesitate to reach out to your instructor for guidance. They are here to assist you throughout the assignment.
+## Key Takeaways
 
-## Your Impact
+This project reflects my ability to:
+- Enhance backend systems to integrate with existing frontend applications.
+- Manage database updates and implement seamless API support for new features.
+- Write clean, modular, and maintainable code.
+- Collaborate effectively by adhering to provided frontend and database constraints.
 
-By successfully completing this assignment, you'll contribute to the comprehensive functionality of the Chinook App, enabling the frontend to manage Artists, Albums, and Tracks seamlessly. This assignment is the final step in the cumulative series, reflecting the culmination of your efforts.
+---
 
-Best of luck, and enjoy the final coding stretch!
+## How to Run the Project
+
+- **Clone the Repository**: 
+
+         git clone <https://github.com/TamannaAnand/ChinookApp.git>
+
+- **Install Dependencies**: 
+
+         npm install
