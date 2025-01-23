@@ -5,6 +5,7 @@
   "description": "<img width=\"200px\" src=\"https://w0244079.github.io/nscc/nscc-jpeg.jpg\">",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
